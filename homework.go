@@ -49,46 +49,31 @@ func IsValid(s string) bool {
 	for _, v := range s {
 		switch v {
 		case '(':
-			if index > 0 && slic[index] == ')' {
-				index--
-			} else {
-				index++
-				slic[index] = '('
-			}
+			index++
+			slic[index] = '('
 		case ')':
 			if index > 0 && slic[index] == '(' {
 				index--
 			} else {
-				index++
-				slic[index] = ')'
+				return false
 			}
 		case '{':
-			if index > 0 && slic[index] == '}' {
-				index--
-			} else {
-				index++
-				slic[index] = '{'
-			}
+			index++
+			slic[index] = '{'
 		case '}':
 			if index > 0 && slic[index] == '{' {
 				index--
 			} else {
-				index++
-				slic[index] = '}'
+				return false
 			}
 		case '[':
-			if index > 0 && slic[index] == ']' {
-				index--
-			} else {
-				index++
-				slic[index] = '['
-			}
+			index++
+			slic[index] = '['
 		case ']':
 			if index > 0 && slic[index] == '[' {
 				index--
 			} else {
-				index++
-				slic[index] = ']'
+				return false
 			}
 		}
 	}
