@@ -1,6 +1,6 @@
-一、项目运行环境：
-go版本：go1.25.4
-mysql版本: 8.0
+一、项目运行环境：<br/>
+go版本：go1.25.4<br/>
+mysql版本: 8.0<br/>
 二、依赖安装步骤
 gorm: go get -u gorm.io/gorm
 mysql: go get -u gorm.io/driver/mysql
