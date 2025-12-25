@@ -1,16 +1,16 @@
-一、项目运行环境：<br/>
+## 一、项目运行环境：<br/>
 go版本：go1.25.4<br/>
 mysql版本: 8.0<br/>
-二、依赖安装步骤
+## 二、依赖安装步骤
 gorm: go get -u gorm.io/gorm
 mysql: go get -u gorm.io/driver/mysql
 gin: go get -u github.com/gin-gonic/gin
 jwt: go get github.com/golang-jwt/jwt/v5
 日志：go get github.com/sirupsen/logrus
-三、启动方式
+## 三、启动方式
 homework04> go run .
-四、接口列表
-1、用户注册接口：POST http://localhost:8080/blog/register
+## 四、接口列表
+1. 用户注册接口：POST http://localhost:8080/blog/register
 BODY:
 
 {
@@ -23,7 +23,7 @@ BODY:
 {
 	"message": "User registered successfully"
 }
-2、登录接口：POST http://localhost:8080/blog/login
+2. 登录接口：POST http://localhost:8080/blog/login
 BODY:
 {
     "username":"cook3",
@@ -34,7 +34,7 @@ BODY:
 {
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJjb29rMyIsImlzcyI6ImNvb2sxOTg3Iiwic3ViIjoiZ2luVGVzdCIsImV4cCI6MTc2NjczMDcyMiwibmJmIjoxNzY2NjQ0MzIyLCJpYXQiOjE3NjY2NDQzMjJ9.VkzGML7lRuBMT9oHoHFxqkJuslgSheRuYklozlCpBlU"
 }
-3、文章创建接口：POST http://localhost:8080/blog/biz/createPost
+3. 文章创建接口：POST http://localhost:8080/blog/biz/createPost
 Header:
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJjb29rMyIsImlzcyI6ImNvb2sxOTg3Iiwic3ViIjoiZ2luVGVzdCIsImV4cCI6MTc2NjczMDcyMiwibmJmIjoxNzY2NjQ0MzIyLCJpYXQiOjE3NjY2NDQzMjJ9.VkzGML7lRuBMT9oHoHFxqkJuslgSheRuYklozlCpBlU
 
@@ -48,7 +48,7 @@ BODY:
 {
 	"msg": "CreatePost ok"
 }
-4、获取所有文章列表接口：GET http://localhost:8080/blog/getAllPosts
+4. 获取所有文章列表接口：GET http://localhost:8080/blog/getAllPosts
 
 响应：
 [
@@ -69,7 +69,7 @@ BODY:
 		"Content": "虽然2025年还没结束，但雷克萨斯实现年销量同比正增长，应该是没有太大的问题。放眼这个进口豪华车市场，这大概率是独一家。数据显示，雷克萨斯今年1—11月的终端销量约16.7万辆，而2024年全年相同口径下的销量则约17.8万辆。年底冲刺背景下，这个日系豪华品牌预计今年的销量将介于18万—19万辆之间。"
 	}
 ]
-5、获取单个文章的详细信息接口：GET http://localhost:8080/blog/getPostDetail/2
+5. 获取单个文章的详细信息接口：GET http://localhost:8080/blog/getPostDetail/2
 
 响应：
 {
@@ -81,7 +81,7 @@ BODY:
 	"Content": "据央视财经报道，当地时间12月22日，美国马里兰州陪审团作出一项裁定：强生公司需向一名因使用其婴儿爽身粉罹患癌症的女性支付15.6亿美元（约合人民币110亿元）赔偿，这一金额创下强生滑石粉致癌诉讼15年来单一原告获赔的最高纪录。"
 }
 
-6、文章更新接口：PATCH http://localhost:8080/blog/biz/updatePost
+6. 文章更新接口：PATCH http://localhost:8080/blog/biz/updatePost
 
 Header:
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJjb29rMyIsImlzcyI6ImNvb2sxOTg3Iiwic3ViIjoiZ2luVGVzdCIsImV4cCI6MTc2NjczMDcyMiwibmJmIjoxNzY2NjQ0MzIyLCJpYXQiOjE3NjY2NDQzMjJ9.VkzGML7lRuBMT9oHoHFxqkJuslgSheRuYklozlCpBlU
@@ -98,7 +98,7 @@ BODY:
 	"msg": "UpatePost ok"
 }
 
-7、文章删除接口：DELETE http://localhost:8080/blog/biz/deletePost/6
+7. 文章删除接口：DELETE http://localhost:8080/blog/biz/deletePost/6
 
 Header:
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJjb29rMyIsImlzcyI6ImNvb2sxOTg3Iiwic3ViIjoiZ2luVGVzdCIsImV4cCI6MTc2NjczMDcyMiwibmJmIjoxNzY2NjQ0MzIyLCJpYXQiOjE3NjY2NDQzMjJ9.VkzGML7lRuBMT9oHoHFxqkJuslgSheRuYklozlCpBlU
@@ -113,7 +113,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJj
 	"Content": "99999虽然2025年还没结束，但雷克萨斯实现年销量同比正增长，应该是没有太大的问题。放眼这个进口豪华车市场，这大概率是独一家。数据显示，雷克萨斯今年1—11月的终端销量约16.7万辆，而2024年全年相同口径下的销量则约17.8万辆。年底冲刺背景下，这个日系豪华品牌预计今年的销量将介于18万—19万辆之间。"
 }
 
-8、评论创建接口：POST http://localhost:8080/blog/biz/createComment
+8. 评论创建接口：POST http://localhost:8080/blog/biz/createComment
 
 Header:
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJjb29rMyIsImlzcyI6ImNvb2sxOTg3Iiwic3ViIjoiZ2luVGVzdCIsImV4cCI6MTc2NjczMDcyMiwibmJmIjoxNzY2NjQ0MzIyLCJpYXQiOjE3NjY2NDQzMjJ9.VkzGML7lRuBMT9oHoHFxqkJuslgSheRuYklozlCpBlU
@@ -129,7 +129,7 @@ BODY:
 	"msg": "Save ok"
 }
 
-9、评论读取接口：GET http://localhost:8080/blog/getCommentsOfPost/2
+9. 评论读取接口：GET http://localhost:8080/blog/getCommentsOfPost/2
 
 响应：
 [
